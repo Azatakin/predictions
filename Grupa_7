@@ -6,8 +6,8 @@ install.packages("tseries")
 library(forecast)
 library(tseries)
 
-portfolio <- "C:/Users/Grzesiek/Documents/GIT/predictions/portfolio.RDS"
-trainData <- "C:/Users/Grzesiek/Documents/GIT/predictions/wig30components.RDS"
+portfolio <- "C:/Users/Kot w butach/Downloads/R-Portable/portfolio.RDS"
+trainData <- "C:/Users/Kot w butach/Downloads/R-Portable/wig30components.RDS"
 
 AutoPredict = function(
   trainData,
