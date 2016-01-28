@@ -6,8 +6,9 @@ install.packages("tseries")
 library(forecast)
 library(tseries)
 
-portfolio <- "C:/Users/Grzesiek/Documents/GIT/predictions/portfolio.RDS"
-trainData <- "C:/Users/Grzesiek/Documents/GIT/predictions/wig30components.RDS"
+portfolio <- "C:/Users/Kot w butach/Downloads/R-Portable/p7.rds"
+trainData <- "C:/Users/Kot w butach/Downloads/R-Portable/wig30components.rds"
+
 
 AutoPredict = function(
   trainData,
@@ -19,6 +20,8 @@ AutoPredict = function(
   
 ### Wygrawanie danych do porftela
   readRDS(file = portfolio)-> InvestingPortfolio
+
+
  
 ### Oczyszczenie danych### Tu się wszystko zaczyna###
 zamkniecie <- na.omit(zamkniecie)
@@ -82,7 +85,7 @@ nrow(close) -> WierszeNauka
 ### Dodaje aktualne ceny instrumentów ##############
   
 for(i in 1:WierszeTab){
-Tablica[i,2] <- close[WierszeNauka,i] 
+Tablica[i,2] <- zamkniecie[WierszeNauka,i] 
 }
 
 ### Sprzedaż, jeżeli jest ponieżej 0##############
@@ -112,3 +115,6 @@ return(Tablica)
 }
 
 zmienna <- AutoPredict(trainData,portfolio)
+
+
+
